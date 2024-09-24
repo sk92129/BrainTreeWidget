@@ -41,9 +41,18 @@ class _BraintreeWebWidgetState extends State<BraintreeHtmlWidget> {
       ));
     }
 
-    _webViewController.loadRequest(Uri.dataFromString(
-        _loadHTML(widget.token,),
-        mimeType: 'text/html'));
+    // https://github.com/flutter/flutter/issues/52367
+    var headersLocal = <String, String>{
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+        'Access-Control-Allow-Credentials': 'true'
+      };
+
+    _webViewController.loadRequest(
+        Uri.dataFromString(
+          _loadHTML(widget.token,),
+          mimeType: 'text/html'), headers: headersLocal
+          );
   }
 
   @override
