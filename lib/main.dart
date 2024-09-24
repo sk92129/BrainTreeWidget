@@ -43,9 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return const Scaffold(
 
-      body: const Center(
+      body: Center(
 
         child: Column(
 
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'Braintree Test',
             ),
 
-            BraintreeHtmlWidget(token: "SANDBOXTOKEN", isWeb: true, isDesktopBrowser: true , isAndroid: false)
+            BraintreeHtmlWidget(token: "sandbox_8hcvphn7_gk8pztf7ypb66m26", isWeb: true, isDesktopBrowser: true , isAndroid: false)
           ],
         ),
       ),
